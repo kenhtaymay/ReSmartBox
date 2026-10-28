@@ -276,9 +276,14 @@ h2 { font: 800 clamp(34px, 4vw, 49px)/1.15 var(--display); letter-spacing: -2.4p
 .team-heading { margin-bottom: 32px; }
 .team-section h2 { margin-top: 17px; }
 .team-heading > p { max-width: 300px; }
-.team-photo { position: relative; overflow: hidden; min-height: 250px; border-radius: 5px; background: #dce4ee; }
-.team-photo img { width: 100%; height: auto; min-height: 250px; object-fit: cover; }
-.team-photo-caption { position: absolute; right: 17px; bottom: 15px; padding: 8px 10px; border: 1px solid rgba(255,255,255,.5); border-radius: 3px; background: rgba(7,28,43,.75); color: white; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.team-founders { padding: 30px 28px 34px; border-radius: 5px; background: #f8faf5; box-shadow: 0 10px 30px rgba(19,47,51,.06); }
+.founders-label { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; color: #768a86; font-size: 8px; font-weight: 700; letter-spacing: .9px; }
+.members { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.member { display: flex; align-items: center; flex-direction: column; text-align: center; }
+.member img { width: 118px; height: 118px; margin-bottom: 16px; padding: 4px; border: 1px solid rgba(35,138,133,.35); border-radius: 50%; background: #fff; object-fit: cover; transition: transform .4s, border-color .4s; }
+.member:hover img { transform: translateY(-3px); border-color: #238a85; }
+.member h3 { margin: 0 0 6px; font: 700 13px/1.35 var(--display); letter-spacing: -.3px; }
+.member span { padding: 4px 9px; border-radius: 20px; background: #e3efea; color: #238a85; font-size: 8px; font-weight: 700; letter-spacing: .6px; }
 .mentors { display: flex; align-items: center; gap: 30px; margin-top: 29px; }
 .mentor-intro { display: flex; align-items: center; gap: 10px; color: #768a86; font-size: 8px; font-weight: 700; letter-spacing: .9px; }
 .mentor-line { width: 24px; height: 1px; background: #41a69b; }
@@ -310,6 +315,8 @@ h2 { font: 800 clamp(34px, 4vw, 49px)/1.15 var(--display); letter-spacing: -2.4p
 .footer-bottom svg { width: 12px; height: 12px; color: var(--lime); }
 
 @media (max-width: 900px) {
+  .members { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px 0; }
+  .member { flex: 0 0 33.333%; }
   .container { width: min(100% - 48px, 720px); }
   .main-nav { gap: 18px; font-size: 11px; }
   .nav-cta { padding: 11px 12px; }
@@ -433,9 +440,12 @@ h2 { font: 800 clamp(34px, 4vw, 49px)/1.15 var(--display); letter-spacing: -2.4p
   .document-link { padding-top: 11px; font-size: 9px; }
   .team-heading { margin-bottom: 25px; }
   .team-section h2 { font-size: 35px; }
-  .team-photo { min-height: 0; }
-  .team-photo img { min-height: 0; width: 100%; }
-  .team-photo-caption { right: 8px; bottom: 8px; font-size: 6px; }
+  .team-founders { padding: 22px 14px 24px; }
+  .founders-label { margin-bottom: 20px; font-size: 7px; }
+  .members { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px 0; }
+  .member { flex: 0 0 50%; }
+  .member img { width: 92px; height: 92px; margin-bottom: 11px; }
+  .member h3 { font-size: 12px; }
   .mentors { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 10px; }
   .mentor-intro { grid-column: 1 / -1; }
   .mentor { gap: 7px; padding-left: 9px; }

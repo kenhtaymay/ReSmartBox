@@ -175,15 +175,15 @@ if (evidenceGrid && partnerGrid) {
 
     return `
       <article class="evidence-card" data-group="${item.group}" data-search="${description.toLocaleLowerCase("vi")}">
-        <a class="document-preview" href="${path}" target="_blank" rel="noopener noreferrer" aria-label="Mở giấy xác nhận của ${item.name} ở kích thước đầy đủ">
+        <a class="document-preview" href="${path}" data-lightbox data-title="${item.name}" data-kind="${item.groupLabel}" aria-label="Xem giấy xác nhận của ${item.name}">
           <img src="${path}" alt="Giấy xác nhận của ${item.name}" loading="lazy" decoding="async">
-          <span class="preview-action">Mở bản gốc <svg><use href="#icon-arrow"/></svg></span>
+          <span class="preview-action">Phóng to <svg><use href="#icon-arrow"/></svg></span>
         </a>
         <div class="document-copy">
           <div class="document-meta"><span class="document-kind ${item.group}">${item.groupLabel}</span><span class="document-index">${String(index + 1).padStart(2, "0")}</span></div>
           <h4>${item.name}</h4>
           <p>${item.category}</p>
-          <a class="document-link" href="${path}" target="_blank" rel="noopener noreferrer">Xem giấy xác nhận <svg><use href="#icon-arrow"/></svg></a>
+          <a class="document-link" href="${path}" data-lightbox data-title="${item.name}" data-kind="${item.groupLabel}">Xem giấy xác nhận <svg><use href="#icon-arrow"/></svg></a>
         </div>
       </article>`;
   }).join("");
@@ -201,7 +201,7 @@ if (evidenceGrid && partnerGrid) {
           <span class="partner-label">ĐƠN VỊ TÀI TRỢ</span>
           <h4>${partner.name}</h4>
           <p>${partner.contribution}</p>
-          <a href="${documentPath}" target="_blank" rel="noopener noreferrer">Giấy xác nhận tài trợ <svg><use href="#icon-arrow"/></svg></a>
+          <a href="${documentPath}" data-lightbox data-title="${partner.name}" data-kind="ĐƠN VỊ TÀI TRỢ">Giấy xác nhận tài trợ <svg><use href="#icon-arrow"/></svg></a>
         </div>
       </article>`;
   }).join("");
@@ -255,5 +255,27 @@ evidenceFilters.forEach((filter) => {
   });
 });
 updateEvidenceList();
+
+const lightbox = document.querySelector("#lightbox");
+const lightboxImage = document.querySelector("#lightbox-image");
+const lightboxTitle = document.querySelector("#lightbox-title");
+const lightboxKind = document.querySelector("#lightbox-kind");
+
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("a[data-lightbox]");
+  if (!trigger || !lightbox?.showModal) return;
+  event.preventDefault();
+  lightboxImage.src = trigger.getAttribute("href");
+  lightboxImage.alt = trigger.dataset.title ?? "";
+  lightboxTitle.textContent = trigger.dataset.title ?? "";
+  lightboxKind.textContent = trigger.dataset.kind ?? "";
+  lightbox.querySelector(".lightbox-body").scrollTop = 0;
+  lightbox.showModal();
+});
+
+lightbox?.addEventListener("click", (event) => {
+  if (event.target === lightbox || event.target.closest(".lightbox-close")) lightbox.close();
+});
+lightbox?.addEventListener("close", () => lightboxImage.removeAttribute("src"));
 
 document.querySelector("#year").textContent = new Date().getFullYear();

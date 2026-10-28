@@ -15,7 +15,7 @@ The workflow in `.github/workflows/pages.yml` deploys the site whenever code is 
 The site uses the custom domain `resmartbox.com`, recorded in `CNAME`. In the
 domain registrar's DNS settings, point the apex domain to GitHub Pages with A
 records for `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and
-`185.199.111.153`. Point `www` to `phuviuter-vn-ai.github.io` with a CNAME
+`185.199.111.153`. Point `www` to `kenhtaymay.github.io` with a CNAME
 record. After DNS propagates, verify the custom domain in **Settings → Pages**
 and enable **Enforce HTTPS** when GitHub makes it available.
 See [DOMAIN-DNS-SETUP.md](./DOMAIN-DNS-SETUP.md) for a step-by-step DNS

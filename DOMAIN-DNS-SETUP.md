@@ -8,12 +8,12 @@ ReSmartBox.
 
 - Tên miền chính (apex): `resmartbox.com`
 - Tên miền `www`: `www.resmartbox.com`
-- Repository: `Phuviuter-vn-ai/ReSmartBox`
+- Repository: `kenhtaymay/ReSmartBox`
 - Nhánh publish: `main`
 - Nguồn GitHub Pages: GitHub Actions
 - CNAME trong repository: `resmartbox.com`
 - GitHub Pages đã được cấu hình custom domain: `resmartbox.com`
-- URL GitHub Pages dự phòng: `https://phuviuter-vn-ai.github.io/ReSmartBox/`
+- URL GitHub Pages dự phòng: `https://kenhtaymay.github.io/ReSmartBox/`
 
 ## 1. Kiểm tra tài khoản quản lý DNS
 
@@ -43,7 +43,7 @@ ghi sau:
 | A | `@` | `185.199.109.153` | Automatic |
 | A | `@` | `185.199.110.153` | Automatic |
 | A | `@` | `185.199.111.153` | Automatic |
-| CNAME | `www` | `phuviuter-vn-ai.github.io` | Automatic |
+| CNAME | `www` | `kenhtaymay.github.io` | Automatic |
 
 Nếu trang DNS yêu cầu điền tên miền đầy đủ thay cho `@`, nhập `resmartbox.com`.
 
@@ -60,7 +60,7 @@ Trước khi lưu:
 
 ## 3. Kiểm tra GitHub Pages
 
-Mở repository **Phuviuter-vn-ai/ReSmartBox → Settings → Pages** và xác nhận:
+Mở repository **kenhtaymay/ReSmartBox → Settings → Pages** và xác nhận:
 
 1. **Build and deployment → Source** đang là **GitHub Actions**.
 2. **Custom domain** là `resmartbox.com` (không nhập đường dẫn hay `https://`).
@@ -84,7 +84,7 @@ Resolve-DnsName www.resmartbox.com -Type CNAME
 ```
 
 Kết quả cần có đủ bốn địa chỉ A của GitHub Pages ở bảng cấu hình. CNAME của
-`www` cần là `phuviuter-vn-ai.github.io`.
+`www` cần là `kenhtaymay.github.io`.
 
 DNS có thể cần thời gian để cập nhật. Sau khi các bản ghi đúng, kiểm tra:
 

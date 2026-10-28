@@ -29,12 +29,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .header-inner { height: 82px; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font: 800 20px var(--display); letter-spacing: -.8px; }
 .brand > span:last-child > span { color: var(--cyan); }
-.brand-mark { width: 34px; height: 30px; position: relative; display: inline-block; }
-.brand-mark i { position: absolute; right: 0; height: 6px; background: var(--cyan); transform: skewY(-32deg); border-radius: 1px; }
-.brand-mark i:nth-child(1) { width: 22px; top: 5px; }
-.brand-mark i:nth-child(2) { width: 28px; top: 13px; }
-.brand-mark i:nth-child(3) { width: 33px; top: 21px; }
-.brand-mark b { position: absolute; left: 0; bottom: 1px; width: 19px; height: 19px; border: 2px solid var(--lime); border-right-color: transparent; border-radius: 50%; }
+.brand-mark { width: auto; height: 32px; display: block; }
 .main-nav { display: flex; align-items: center; gap: 34px; color: #c3d1d2; font-size: 13px; font-weight: 600; }
 .main-nav > a:not(.nav-cta) { transition: color .2s; }
 .main-nav > a:not(.nav-cta):hover { color: var(--lime); }

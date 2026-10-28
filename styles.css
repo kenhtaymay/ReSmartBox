@@ -153,6 +153,9 @@ h2 { font: 800 clamp(34px, 4vw, 49px)/1.15 var(--display); letter-spacing: -2.4p
 .card-lab .card-image img { object-position: 50% 35%; }
 .card-photo .card-image img { object-position: 50% 22%; }
 .card-care .card-image img { object-position: 50% 25%; }
+.card-queue .card-image img { object-position: 0 50%; }
+.card-restaurant .card-image img { object-position: 0 0; }
+.card-vitals .card-image img { object-position: 35% 40%; }
 .card-number { position: absolute; z-index: 1; top: 13px; right: 14px; display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; background: rgba(7,28,43,.62); color: white; font: 600 10px var(--display); }
 .card-content { position: relative; min-height: 210px; padding: 23px 23px 21px; }
 .card-category { color: #258d83; font-size: 8px; font-weight: 700; letter-spacing: 1.1px; }
